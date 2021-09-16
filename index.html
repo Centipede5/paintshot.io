@@ -1,0 +1,315 @@
+<html lang="en">
+	<head>
+		<meta charset=utf-8 />
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link type="text/css" rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<title>Paintshot.io</title>
+		<meta name="description" content="Paintshot.io is a free multiplayer io paintball game you play in your browser"/>
+		<meta name="author" content="Centipede5"/>
+		<link rel="base" href="https://paintshot.io"/>
+		<link rel="canonical" href="https://paintshot.io"/>
+		<meta rel="sitemap" type="application/xml" content="https://paintshot.io/sitemap.xml"/>
+		<meta name="robots" content="index/follow"/>
+		<meta name="googlebot" content="index/follow"/>
+		<meta name="theme-color" content=""/>
+		<meta name="msapplication-navbutton-color" content=""/>
+		<meta name="apple-mobile-web-app-status-bar-style" content=""/>
+		<!-- Schema.org markup for Google+ -->
+		<meta itemprop="name" content="Paintshot.io"/>
+		<meta itemprop="description" content="Paintshot.io is a free multiplayer io paintball game you play in your browser"/>
+		<meta itemprop="image" content="https://paintshot.io/thumb.png"/>
+		<!-- markup for facebook -->
+		<meta property="og:type" content=""/>
+		<meta property="og:title" content="Paintshot.io"/>
+		<meta property="og:url" content="https://paintshot.io"/>
+		<meta property="og:site_name" content=""/>
+		<meta property="og:image" content="https://paintshot.io/thumb.png"/>
+		<meta property="og:description" content="Paintshot.io is a free multiplayer io paintball game you play in your browser"/>
+		<meta property="og:locale" content=""/>
+		<meta property="fb:app_id" content=""/>
+		<meta property="fb:admins" content=""/>
+		<!-- markup for twitter -->
+		<meta name="twitter:card" content=""/>
+		<meta name="twitter:title" content="Paintshot.io"/>
+		<meta name="twitter:description" content="Paintshot.io is a free multiplayer io paintball game you play in your browser"/>
+		<meta name="twitter:creator" content="Centipede5"/>
+		<meta name="twitter:image" content="https://paintshot.io/thumb.png"/>
+		<!-- JSON-LD - structured data markup Google Search -->
+		<script type="application/ld+json">
+		{"@context":"http://www.schema.org","@type":"website","name":"Paintshot","url":"https://paintshot.io/"}
+		</script>
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-RDQ712V8V5"></script>
+		<style>
+			#sdk__advertisement {
+				z-index:10000!important;
+			}
+		</style>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		
+		  gtag('config', 'G-RDQ712V8V5');
+		</script>
+		<script>
+			window.modeldata = {}
+			window.modelsleft = ['./models/character/character_v2.glb','./models/character/weapons.glb']
+		</script>
+		<script type="text/javascript" src="js/three.min.js"></script>
+		<script type="text/javascript" src="myjsm/render.js"></script>
+		<script type="text/javascript" src="js/jsrand.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js" integrity="sha512-Meww2sXqNHxI1+5Dyh/9KAtvI9RZSA4c1K2k5iL02oiPO/RH3Q30L3M1albtqMg50u4gRTYdV4EXOQqXEI336A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<div style="display:none;">
+			<img id="smiley" src="img/smiley.png">
+		</div>
+		<!-- AdinPlay Ads -->
+		<script>
+		var aiptag = aiptag || {};
+		aiptag.cmd = aiptag.cmd || [];
+		aiptag.cmd.display = aiptag.cmd.display || [];
+		aiptag.cmd.player = aiptag.cmd.player || [];
+		
+		//CMP tool settings
+		aiptag.cmp = {
+			show: true,
+			position: "centered",  //centered or bottom
+			button: true,
+			buttonText: "Privacy settings",
+			buttonPosition: "bottom-left" //bottom-left, bottom-right, top-left, top-right
+		}
+		</script>
+		<script>
+		function getParameterByName(name, url = window.location.href) {
+		    name = name.replace(/[\[\]]/g, '\\$&');
+		    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+		        results = regex.exec(url);
+		    if (!results) return null;
+		    if (!results[2]) return '';
+		    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+		}
+			window.SDK_OPTIONS = {
+			      gameId: "58siwxcyry74fm2z6fpapqgxfhtst8i2",
+			      onEvent: function (a) {
+			      	console.log(a.name)
+			         switch (a.name) {
+			            case "SDK_GAME_PAUSE":
+			            	window.muted = true;
+			            	window.quittomenu()
+			               // pause game logic / mute audio
+			               break;
+			            case "SDK_GAME_START":
+			            	window.muted = false;
+			               window.play();
+			               break;
+			            case "SDK_READY":
+			               // when sdk is ready
+			               break;
+			         }
+			      }
+			   };
+			   
+		if(getParameterByName('gamedomain',document.location.href)=='gamemonetize.com'){
+			(function (a, b, c) {
+			   var d = a.getElementsByTagName(b)[0];
+			   a.getElementById(c) || (a = a.createElement(b), a.id = c, a.src = "https://api.gamemonetize.com/sdk.js", d.parentNode.insertBefore(a, d))
+			})(document, "script", "gamemonetize-sdk"); 
+		}
+		</script>
+		<script async src="//api.adinplay.com/libs/aiptag/pub/KOH/paintshot.io/tag.min.js"></script>
+		<style>
+			#skinWrapper {
+				position:absolute;
+				transform:translate(50%,0);
+				bottom: 10px;
+			    right: 50%;
+			    width: 30vh;
+		  		height: 30vh;
+			}
+			#skinHolder {
+				width: 100%;
+				height:100%;
+			}
+			.chatbox {
+			    position: absolute;
+			    bottom: 15px;
+			    left: 10px;
+			    z-index:5;
+			    color: #fff;
+			    text-shadow: #000 0px 0px 1px;
+			    -webkit-font-smoothing: antialiased;
+			    pointer-events: none;
+			}
+	
+			.chatbox .chat-list {
+			    position: relative;
+			    list-style: none;
+			    width: 254px;
+			    max-height:200px;
+			    overflow: hidden;
+			    margin: 0px;
+			    padding-left: 4px;
+			    padding-right: 4px;
+			    color: #fff;
+			    font-weight:bold;
+			    font-size: 15px;
+			    user-select: text;
+			    border-radius: 3px 3px 0 0;
+			}
+			.chatbox .chat-input {
+			    position: relative;
+			    pointer-events: auto;
+			    font-weight:bold;
+			    width: 250px;
+			    padding: 4px;
+			    padding-left: 8px;
+			    padding-right: 4px;
+			    color: #fff;
+			    border: none;
+			    font-size: 15px;
+			    background: rgba(0, 0, 0, 0.4);
+			    display: inline-block;
+			    border-radius: 0 0 3px 3px;
+			}
+		</style>
+	</head>
+	<body>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="js/howler.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js" integrity="sha512-Meww2sXqNHxI1+5Dyh/9KAtvI9RZSA4c1K2k5iL02oiPO/RH3Q30L3M1albtqMg50u4gRTYdV4EXOQqXEI336A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<div id="mainMenu" style="width:100%;height:100%;z-index:500;position:absolute;">
+			<!--<div class="position-absolute" style="right:50%;bottom:10px;height:20%;">-->
+				
+			<!--</div>-->
+			<div id="partnerlinks" style="position:absolute;z-index:5;bottom:5px;left:5px">
+				<div id="linkholder" class="text-light">
+					
+					<a target="_blank" id="crazygames" class="btn btn-light" href="https://crazygames.com/c/io"><img id="crazygames" class="img-fluid" src="img/crazygames.png" style="height:50px;"></a><br>
+					<a target="_blank" id="iogamesspace" class="btn btn-dark" href="https://iogames.space" ><b  id="iospace" style="font-size:30px;">Io Games</b></a>
+					<!--<a class="text-light" href="https://crazygames.com/c/io">CrazyGames.com</a>-->
+					<!--<a class="text-light" href="https://iogames.space">Iogames.space</a>-->
+				</div>
+				
+			</div>
+			<div id="skinWrapper">
+				<span id="prevSkin" class="carousel-control-prev-icon" style="position:absolute;top:50%;left:10px;"></span>
+				<canvas id="skinHolder"></canvas>
+				<span id="nextSkin" class="carousel-control-next-icon" style="position:absolute;top:50%;right:10px;"></span>
+			</div>
+			<div class="position-absolute mt-4" style="left:50%;transform:translate(-50%,0%)">
+				<img src="img/logo.png" style="" class="w-100" >
+			</div>
+			<!--<div class="row align-items-center mt-4 position-absolute">-->
+		 <!--       <div class="col-6 mx-auto">-->
+		        	
+		 <!--       </div>-->
+		 <!--   </div>-->
+		 <div class="col col-2" style="z-index:500;position:absolute;right:75%;top:50%;transform:translate(0%,-50%)">
+		 	<div id='paintshot-io_300x250'>
+			    <script type='text/javascript'>
+			    if(window.innerWidth>1200){
+			    	aiptag.cmd.display.push(function() { aipDisplayTag.display('paintshot-io_300x250'); });
+			    }
+			    </script>
+			</div>
+		 	</div>
+			<div class="container h-100">
+				
+			    <div class="row align-items-center h-100">
+			        <div class="col-6 mx-auto text-center" style="animation: pulse 1.5s infinite;transform: scale(1);">
+			        	<b id="actionText" class="text-light" style="font-size:25px;">LOADING</b><br>
+			        	<button id="newgame" type="button" onclick="document.location.href=document.location.origin" style="display:none" class="btn w-100  mt-3 btn btn-outline-danger">Find New Game</button>
+			        </div>
+			    </div>
+			</div>
+			
+			<div class="col col-2" style="z-index:500;position:absolute;left:75%;top:50%;transform:translate(0%,-50%)">
+				<div class="">
+					<button id="inviteBtn" class="btn btn-primary btn-block">Invite</button>
+					<button id="serversBtn" class="btn btn-primary btn-block">Servers</button>
+					<button id="settingsBtn" class="btn btn-info btn-block">Settings</button>
+				</div>
+				
+			</div>
+		</div>
+		<div id="gameDiv" style="display:none;">
+			<div class="chatbox text-light" id="chatbox" style="display: block;">
+				<ul id="chatList" class="chat-list">
+					
+				</ul>
+				<div id="chatHolder">
+					<input id="chatInput" type="text" class="chat-input" placeholder="Send Message... [enter]" maxlength="50">
+				</div>
+			</div>
+		</div>
+		<div id="preroll"></div>
+		<script>
+			aiptag.cmd.player.push(function() {
+				aiptag.adplayer = new aipPlayer({
+					AD_WIDTH: 960,
+					AD_HEIGHT: 540,
+					AD_FULLSCREEN: true,
+					AD_CENTERPLAYER: true,
+					LOADING_TEXT: 'loading advertisement',
+					PREROLL_ELEM: function(){return document.getElementById('preroll')},
+					AIP_COMPLETE: function (evt)  {
+						window.play();
+					},
+					AIP_REMOVE: function ()  {
+						// Here it's safe to remove the PREROLL_ELEM from the page if you want. But it's not recommend.
+					}
+				});
+			});
+		</script>
+		
+		<!--<div id="info">game <br>-->
+		<!--CURRENT HP: <b id='hp'>100</b></div>-->
+		<div id="container"></div>
+		<div id="settingsModal" class="modal" tabindex="-1" role="dialog">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title">Settings</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		        <label for="senseRange">Sensitivity</label>
+			      <input type="range" min="0.1" max="2" step="0.1" value="1" class="form-control-range" id="senseRange" onInput="">
+			      <span id="rangeval">1<!-- Default value --></span>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<div id="serversModal" class="modal" tabindex="-1" role="dialog">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title">Servers</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		        <li id="serverList" style="list-style-type: none;">
+		        	
+		        </li>
+		        <small id="totalOnline"></small>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<script type="module" src="main.js"></script>
+	</body>
+</html>
